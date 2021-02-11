@@ -1,0 +1,15 @@
+name: hello-world-docker
+on: [push]
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Hello world docker build
+        uses: docker build -f test-image .
+      - name: Hello world docker run
+        uses: docker run test-image "Mona the Octocat"
+      - name: Get the output time
+        run: echo "The time was ${{ steps.hello.outputs.time }}"
