@@ -8,7 +8,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Hello world docker build
-        run: docker build -f test-image .
+        run: docker build -t test-image .
       - name: Hello world docker run
         run: docker run test-image "Mona the Octocat"
       - name: Get the output time
