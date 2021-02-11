@@ -11,5 +11,6 @@ jobs:
         run: docker build -t test-image .
       - name: Hello world docker run
         run: docker run test-image "Mona the Octocat"
+        id: hello
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
